@@ -60,3 +60,4 @@ volumes:
 networks:
   gpds-net:
     driver: bridge
+    external: true

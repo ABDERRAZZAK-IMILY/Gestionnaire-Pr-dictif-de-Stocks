@@ -2,7 +2,7 @@ package org.backend.gpds.main.seeder;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.backend.gpds.Enums.Role;
+import org.backend.gpds.main.Enums.Role;
 import org.backend.gpds.main.model.User;
 import org.backend.gpds.main.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;

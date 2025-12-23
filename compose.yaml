@@ -1,9 +1,48 @@
+version: "3.9"
+
 services:
+
   postgres:
-    image: 'postgres:latest'
+    image: postgres:16
+    container_name: gpds-postgres
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      POSTGRES_DB: gpds
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 202580
     ports:
-      - '5432'
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - gpds-net
+
+  mongo:
+    image: mongo:7
+    container_name: gpds-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - gpds-net
+
+  app:
+    build: .
+    container_name: gpds-app
+    depends_on:
+      - postgres
+      - mongo
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres,mongo
+    ports:
+      - "8080:8080"
+    networks:
+      - gpds-net
+
+volumes:
+  pg_data:
+  mongo_data:
+
+networks:
+  gpds-net:
+    driver: bridge

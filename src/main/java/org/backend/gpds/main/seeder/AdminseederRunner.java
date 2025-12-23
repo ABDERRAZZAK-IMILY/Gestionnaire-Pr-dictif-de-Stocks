@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.backend.gpds.main.Enums.Role;
 import org.backend.gpds.main.model.User;
-import org.backend.gpds.main.repository.UserRepository;
+import org.backend.gpds.main.repository.jpa.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;

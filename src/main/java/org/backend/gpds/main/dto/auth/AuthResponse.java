@@ -9,6 +9,6 @@ public class AuthResponse {
     private String token;
     private String email;
     private String name;
-    private String id;
+    private Long id;
     private String role;
 }

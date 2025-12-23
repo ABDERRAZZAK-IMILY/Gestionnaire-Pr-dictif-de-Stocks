@@ -1,26 +1,26 @@
 package org.backend.gpds.main.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.gpds.Enums.Role;
-import org.springframework.data.annotation.Id;
 
 
-@Data
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
+@Entity
+@Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @Column(nullable = false)
+    private Long id;
 
     @Column(nullable = false)
     private String name;

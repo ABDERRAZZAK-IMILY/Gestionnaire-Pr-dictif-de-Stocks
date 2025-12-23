@@ -1,4 +1,6 @@
 spring:
-  profiles: ai
+  config:
+    activate:
+      on-profile: ai
 
 spring.ai.deepseek.api-key: ${DEEPSEEK_API_KEY}

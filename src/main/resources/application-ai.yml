@@ -1,0 +1,4 @@
+spring:
+  profiles: ai
+
+spring.ai.deepseek.api-key: ${DEEPSEEK_API_KEY}

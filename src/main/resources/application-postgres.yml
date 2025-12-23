@@ -1,0 +1,12 @@
+spring:
+  profiles: postgres
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gpds
+    username: postgres
+    password: 202580
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

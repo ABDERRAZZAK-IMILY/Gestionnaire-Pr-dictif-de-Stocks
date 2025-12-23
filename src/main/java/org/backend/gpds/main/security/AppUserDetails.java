@@ -22,7 +22,7 @@ public class AppUserDetails implements UserDetails {
     }
 
 
-    public String getId(){
+    public Long getId(){
         return user.getId();
     }
 

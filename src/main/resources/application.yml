@@ -2,6 +2,11 @@ spring:
   application:
     name: GPDS
 
+  ai:
+    deepseek:
+      enabled: false
+
+
 app:
   jwtSecret: ${APP_JWT_SECRET:sqbddsjvqfhjskhlfdskjlhfdlskqgfsldbfhkdskflhsdhklfsqdhkfgqhsdklfhk}
   jwtExpirationMs: 86400000

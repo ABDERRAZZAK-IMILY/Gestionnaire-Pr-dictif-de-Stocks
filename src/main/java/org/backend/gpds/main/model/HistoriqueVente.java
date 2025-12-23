@@ -15,7 +15,7 @@ public class HistoriqueVente {
 
     @ManyToOne
     @JoinColumn(name = "produit_id", nullable = false)
-    private Produit produit;
+    private Product produit;
 
     @ManyToOne
     @JoinColumn(name = "entrepot_id", nullable = false)

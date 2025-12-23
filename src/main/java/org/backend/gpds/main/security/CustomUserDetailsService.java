@@ -3,7 +3,7 @@ package org.backend.gpds.main.security;
 
 
 import org.backend.gpds.main.model.User;
-import org.backend.gpds.main.repository.UserRepository;
+import org.backend.gpds.main.repository.jpa.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

@@ -1,7 +1,7 @@
 package org.backend.gpds.main.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import org.backend.gpds.Enums.Role;
+import org.backend.gpds.main.Enums.Role;
 import org.backend.gpds.main.dto.request.UserCreateDTO;
 import org.backend.gpds.main.dto.request.UserUpdateDTO;
 import org.backend.gpds.main.dto.response.UserResponseDTO;

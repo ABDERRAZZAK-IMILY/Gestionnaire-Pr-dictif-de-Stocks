@@ -1,6 +1,6 @@
 package org.backend.gpds.main.dto.request;
 
-import org.backend.gpds.Enums.Unite;
+import org.backend.gpds.main.Enums.Unite;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;

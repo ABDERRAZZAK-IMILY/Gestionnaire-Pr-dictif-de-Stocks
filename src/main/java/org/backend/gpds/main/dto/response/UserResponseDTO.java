@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.backend.gpds.Enums.Role;
+import org.backend.gpds.main.Enums.Role;
 @Data
 @Builder
 @NoArgsConstructor
@@ -17,7 +17,7 @@ public class UserResponseDTO {
     private String prenom;
     private String email;
     private Role role;
-    private boolean active;
+    private boolean actif;
 
     private Long entrepotId;
 

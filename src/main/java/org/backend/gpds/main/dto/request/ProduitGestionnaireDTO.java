@@ -1,28 +1,16 @@
 package org.backend.gpds.main.dto.request;
 
 
-import jakarta.validation.constraints.*;
-import lombok.Getter;
-import lombok.Setter;
 import org.backend.gpds.Enums.Unite;
+import lombok.*;
 
-@Getter
-@Setter
-public class ProduitCreateDTO {
-
+@Getter @Setter
+public class ProduitGestionnaireDTO {
+    private Long id;
     private String nom;
-
     private String description;
     private String categorie;
-
     private double prixVente;
-
-    private double prixAchat;
-
-    private double marge;
-
     private double poids;
-
-    @NotNull
     private Unite unite;
 }

@@ -6,7 +6,7 @@ import org.backend.gpds.main.dto.auth.LoginRequest;
 import org.backend.gpds.main.dto.auth.RegisterRequest;
 import org.backend.gpds.main.mapper.UserMapper;
 import org.backend.gpds.main.model.User;
-import org.backend.gpds.main.repository.UserRepository;
+import org.backend.gpds.main.repository.jpa.UserRepository;
 import org.backend.gpds.main.security.JwtUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -6,8 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.backend.gpds.Enums.Role;
-
+import org.backend.gpds.main.Enums.Role;
 
 
 @Builder
@@ -32,7 +31,7 @@ public class User {
     private String passwordHash;
 
     @Column(nullable = false)
-    private Role role;  // Application role (USER, ADMIN)
+    private Role role;  // Application role (GESTIONNAIRE, ADMIN)
 
 
 }

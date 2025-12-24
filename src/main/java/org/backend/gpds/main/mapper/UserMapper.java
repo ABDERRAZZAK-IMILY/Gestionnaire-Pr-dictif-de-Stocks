@@ -1,6 +1,7 @@
 package org.backend.gpds.main.mapper;
 
 
+import org.backend.gpds.main.dto.request.UserCreateDTO;
 import org.backend.gpds.main.dto.response.UserResponseDTO;
 import org.backend.gpds.main.model.User;
 import org.springframework.stereotype.Component;
@@ -20,5 +21,14 @@ public class UserMapper {
                 .role(user.getRole())
                 .entrepotId(user.getEntrepot() != null ? user.getEntrepot().getId() : null)
                 .build();
+    }
+
+    public User toEntity(UserCreateDTO dto) {
+        User user = new User();
+        user.setNom(dto.getNom());
+        user.setPrenom(dto.getPrenom());
+        user.setEmail(dto.getEmail());
+        user.setRole(dto.getRole());
+        return user;
     }
 }

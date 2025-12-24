@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.backend.gpds.Enums.Role;
+import org.backend.gpds.main.Enums.Role;
 
 import javax.validation.constraints.Size;
 

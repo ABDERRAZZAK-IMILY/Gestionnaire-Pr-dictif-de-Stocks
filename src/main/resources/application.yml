@@ -2,11 +2,20 @@ spring:
   application:
     name: GPDS
 
+  profiles:
+    active: postgres,mongo
   ai:
     deepseek:
       enabled: false
 
+server:
+  port: 8080
 
 app:
-  jwtSecret: ${APP_JWT_SECRET:sqbddsjvqfhjskhlfdskjlhfdlskqgfsldbfhkdskflhsdhklfsqdhkfgqhsdklfhk}
+  jwtSecret: ${APP_JWT_SECRET:sqbddsjvqfhjskhlfdskqgfsldbfhkdskflhsdhklfsqdhkfgqhsdklfhk}
   jwtExpirationMs: 86400000
+
+  boot:
+    docker:
+      compose:
+        service-readiness-timeout: 5m

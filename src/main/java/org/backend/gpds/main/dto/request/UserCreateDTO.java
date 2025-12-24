@@ -1,9 +1,16 @@
 package org.backend.gpds.main.dto.request;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.backend.gpds.Enums.Role;
 import jakarta.validation.constraints.*;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserCreateDTO {
 
     @NotBlank

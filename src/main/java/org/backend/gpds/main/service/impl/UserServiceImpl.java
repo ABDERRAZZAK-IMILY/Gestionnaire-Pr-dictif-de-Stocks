@@ -33,32 +33,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponseDTO createUser(UserCreateDTO dto) {
 
-        User user = new User();
-        user.setLogin(dto.getLogin());
-        user.setPassword(passwordEncoder.encode(dto.getPassword()));
-        user.setNom(dto.getNom());
-        user.setPrenom(dto.getPrenom());
-        user.setEmail(dto.getEmail());
-        user.setRole(dto.getRole());
-        user.setActive(true);
-
-        if (dto.getRole() == Role.GESTIONNAIRE) {
-            if (dto.getEntrepotId() == null) {
-                throw new InvalidUserRoleException(
-                        "Un gestionnaire doit être assigné à un entrepôt"
-                );
-            }
-
-            Entrepot entrepot = entrepotRepository.findById(dto.getEntrepotId())
-                    .orElseThrow(() -> new RuntimeException("Entrepôt introuvable"));
-
-            user.setEntrepot(entrepot);
-        } else {
-            user.setEntrepot(null); // ADMIN
-        }
+        User user = User.builder()
+                .name(dto.getNom() + " " + dto.getPrenom()) // ou dto.getName()
+                .email(dto.getEmail())
+                .passwordHash(passwordEncoder.encode(dto.getPassword()))
+                .role(dto.getRole())
+                .build();
 
         return userMapper.toDto(userRepository.save(user));
     }
+
 
     @Override
     public UserResponseDTO updateUser(Long userId, UserUpdateDTO dto) {

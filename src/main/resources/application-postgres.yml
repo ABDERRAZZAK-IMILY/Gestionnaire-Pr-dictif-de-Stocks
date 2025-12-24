@@ -1,11 +1,12 @@
 spring:
-  profiles: postgres
-
+  config:
+    activate:
+      on-profile: postgres
   datasource:
-    url: jdbc:postgresql://localhost:5432/gpds
+    url: jdbc:postgresql://postgres:5433/gpds
     username: postgres
     password: 202580
-
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update

@@ -1,6 +1,7 @@
 spring:
-  profiles: mongo
-
+  config:
+    activate:
+      on-profile: mongo
   data:
     mongodb:
-      uri: mongodb://localhost:27017/gpds_analytics
+      uri: mongodb://mongo:27017/gpds_analytics

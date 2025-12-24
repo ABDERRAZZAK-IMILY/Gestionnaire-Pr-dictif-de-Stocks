@@ -6,7 +6,7 @@ import lombok.*;
 @Getter @Setter
 public class StockDTO {
     private Long id;
-    private String produit;
+    private String produitNom;
     private int quantiteDisponible;
     private int seuilAlerte;
     private boolean stockBas;

@@ -2,7 +2,7 @@ package org.backend.gpds.main.model;
 
 import org.backend.gpds.main.model.*;
 import jakarta.persistence.*;
-        import lombok.*;
+import lombok.*;
 
 @Entity
 @Getter @Setter

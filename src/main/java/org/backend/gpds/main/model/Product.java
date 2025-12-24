@@ -2,6 +2,7 @@ package org.backend.gpds.main.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.backend.gpds.Enums.Unite;
 
 @Entity
 @Getter @Setter

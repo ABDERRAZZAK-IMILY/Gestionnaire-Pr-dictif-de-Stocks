@@ -15,4 +15,6 @@ public class ProduitAdminDTO {
     private double marge;
     private double poids;
     private Unite unite;
+    private boolean actif;
+
 }

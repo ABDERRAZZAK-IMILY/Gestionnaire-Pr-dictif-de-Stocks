@@ -1,14 +1,14 @@
 package org.backend.gpds.main.mapper;
 
-
 import org.backend.gpds.main.dto.*;
-import org.backend.gpds.main.dto.request.ProduitAdminDTO;
-import org.backend.gpds.main.dto.request.ProduitGestionnaireDTO;
 import org.backend.gpds.main.model.Product;
+import org.backend.gpds.main.dto.request.ProduitAdminDTO;
+import org.backend.gpds.main.dto.request.ProduitCreateDTO;
+import org.backend.gpds.main.dto.request.ProduitGestionnaireDTO;
 
 public class ProduitMapper {
 
-    public static Product toEntity(ProduitGestionnaireDTO dto) {
+    public static Product toEntity(ProduitCreateDTO dto) {
         return Product.builder()
                 .nom(dto.getNom())
                 .description(dto.getDescription())
@@ -18,6 +18,7 @@ public class ProduitMapper {
                 .marge(dto.getMarge())
                 .poids(dto.getPoids())
                 .unite(dto.getUnite())
+                .actif(true)
                 .build();
     }
 
@@ -32,6 +33,7 @@ public class ProduitMapper {
         dto.setMarge(p.getMarge());
         dto.setPoids(p.getPoids());
         dto.setUnite(p.getUnite());
+        dto.setActif(p.isActif());
         return dto;
     }
 

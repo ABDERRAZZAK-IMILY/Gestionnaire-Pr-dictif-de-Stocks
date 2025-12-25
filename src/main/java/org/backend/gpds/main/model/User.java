@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.gpds.main.Enums.Role;
+import org.backend.gpds.main.model.Entrepot;
+
 
 @Entity
 @Table(name = "users")
@@ -22,12 +24,11 @@ public class User {
     private String login;
 
     @Column(nullable = false)
-    private String password; // hashé (BCrypt)
+    private String password;
 
     @Column(nullable = false)
     private String nom;
 
-    @Column(nullable = false)
     private String prenom;
 
     @Column(nullable = false, unique = true)
@@ -41,5 +42,5 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "entrepot_id")
-    private Entrepot entrepot; // NULL si ADMIN, obligatoire si GESTIONNAIRE
+    private Entrepot entrepot;
 }

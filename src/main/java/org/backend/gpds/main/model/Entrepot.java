@@ -3,6 +3,9 @@ package org.backend.gpds.main.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
@@ -25,4 +28,5 @@ public class Entrepot {
 
 
     private boolean actif = true;
+
 }

@@ -26,6 +26,7 @@ public class Entrepot {
     @Column(nullable = false)
     private String adresse;
 
+
     private boolean actif = true;
 
 }

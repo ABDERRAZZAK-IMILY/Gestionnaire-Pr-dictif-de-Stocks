@@ -6,7 +6,6 @@ import org.backend.gpds.main.dto.request.ProduitAdminDTO;
 import org.backend.gpds.main.dto.request.ProduitCreateDTO;
 import org.backend.gpds.main.dto.request.ProduitUpdateDTO;
 import org.backend.gpds.main.mapper.ProduitMapper;
-import org.backend.gpds.main.service.ProduitService;
 import jakarta.validation.Valid;
 import org.backend.gpds.main.service.impl.ProduitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

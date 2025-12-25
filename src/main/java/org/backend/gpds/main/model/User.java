@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.gpds.main.Enums.Role;
+import org.backend.gpds.main.model.Entrepot;
+
 
 @Entity
 @Table(name = "users")
@@ -19,7 +21,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String login;
 
     @Column(nullable = false)
@@ -28,7 +29,6 @@ public class User {
     @Column(nullable = false)
     private String nom;
 
-    @Column(nullable = false)
     private String prenom;
 
     @Column(nullable = false, unique = true)
@@ -36,8 +36,8 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
-    @Column(nullable = false)
+    private Role role; // ADMIN, GESTIONNAIRE
+
     private boolean actif;
 
     @ManyToOne

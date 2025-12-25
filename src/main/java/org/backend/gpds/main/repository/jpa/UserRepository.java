@@ -11,6 +11,8 @@ import java.util.Optional;
 //@Profile("postgres")
 public interface UserRepository extends JpaRepository<User, String> {
 
+    Optional<User> findById(Long id);
+
     Optional<User> findByEmail(String email);
 
     boolean existsByEmail(String login);

@@ -24,7 +24,7 @@ public class User {
     private String login;
 
     @Column(nullable = false)
-    private String password; // hashé (BCrypt)
+    private String password;
 
     @Column(nullable = false)
     private String nom;
@@ -42,5 +42,5 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "entrepot_id")
-    private Entrepot entrepot; // NULL si ADMIN, obligatoire si GESTIONNAIRE
+    private Entrepot entrepot;
 }

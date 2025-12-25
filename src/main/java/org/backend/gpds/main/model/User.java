@@ -23,7 +23,7 @@ public class User {
     private String login;
 
     @Column(nullable = false)
-    private String password; // hashé (BCrypt)
+    private String password;
 
     @Column(nullable = false)
     private String nom;
@@ -36,12 +36,11 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role; // ADMIN, GESTIONNAIRE
-
+    private Role role;
     @Column(nullable = false)
     private boolean actif;
 
     @ManyToOne
     @JoinColumn(name = "entrepot_id")
-    private Entrepot entrepot; // NULL si ADMIN, obligatoire si GESTIONNAIRE
+    private Entrepot entrepot;
 }

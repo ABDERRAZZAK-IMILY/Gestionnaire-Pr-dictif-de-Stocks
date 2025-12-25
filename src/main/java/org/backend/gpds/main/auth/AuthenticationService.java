@@ -5,6 +5,7 @@ import org.backend.gpds.main.dto.auth.AuthResponse;
 import org.backend.gpds.main.dto.auth.LoginRequest;
 import org.backend.gpds.main.dto.auth.RegisterRequest;
 import org.backend.gpds.main.mapper.UserMapper;
+import org.backend.gpds.main.model.RefreshToken;
 import org.backend.gpds.main.model.User;
 import org.backend.gpds.main.repository.jpa.UserRepository;
 import org.backend.gpds.main.security.JwtUtils;
@@ -23,12 +24,14 @@ public class AuthenticationService {
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
     private final UserMapper userMapper;
+    private final RefreshTokenService refreshTokenService;
 
     public AuthenticationService(UserRepository userRepository,
             PasswordEncoder passwordEncoder,
             JwtUtils jwtUtils,
             AuthenticationManager authenticationManager,
-            UserMapper userMapper) {
+            UserMapper userMapper , RefreshTokenService refreshTokenService) {
+        this.refreshTokenService = refreshTokenService;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtils = jwtUtils;
@@ -59,6 +62,8 @@ public class AuthenticationService {
 
         User user = userRepository.findByEmail(request.getEmail()).orElseThrow();
 
-        return new AuthResponse(token, user.getEmail(), user.getName(), user.getId(), user.getRole().name());
+        RefreshToken refreshToken = refreshTokenService.createRefreshToken(user.getId());
+
+        return new AuthResponse(token, refreshToken.getToken() , user.getEmail(), user.getName() , user.getId(), user.getRole().name());
     }
 }

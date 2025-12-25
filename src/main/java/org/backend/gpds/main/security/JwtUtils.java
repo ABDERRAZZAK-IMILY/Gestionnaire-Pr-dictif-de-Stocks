@@ -68,4 +68,13 @@ public class JwtUtils {
     public List<String> extractRoles(String token) {
         return JWT.decode(token).getClaim("roles").asList(String.class);
     }
+
+
+    public String generateTokenFromUsername(String username) {
+        return JWT.create()
+                .withSubject(username)
+                .withIssuedAt(Instant.now())
+                .withExpiresAt(Instant.now().plusMillis(jwtExpirationMs))
+                .sign(Algorithm.HMAC256(secretKey));
+    }
 }

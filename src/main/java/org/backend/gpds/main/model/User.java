@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.gpds.main.Enums.Role;
+import org.backend.gpds.main.model.Entrepot;
+
 
 @Entity
 @Table(name = "users")
@@ -28,7 +30,6 @@ public class User {
     @Column(nullable = false)
     private String nom;
 
-    @Column(nullable = false)
     private String prenom;
 
     @Column(nullable = false, unique = true)

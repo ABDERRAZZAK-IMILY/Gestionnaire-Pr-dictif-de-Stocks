@@ -64,6 +64,6 @@ public class AuthenticationService {
 
         RefreshToken refreshToken = refreshTokenService.createRefreshToken(user.getId());
 
-        return new AuthResponse(token, refreshToken.getToken() , user.getEmail(), user.getName() , user.getId(), user.getRole().name());
+        return new AuthResponse(token, refreshToken.getToken() , user.getEmail(), user.getNom() , user.getId(), user.getRole().name());
     }
 }

@@ -1,24 +1,36 @@
-package org.backend.gpds.main.dto.response;
+package org.backend.gpds.main.dto.request;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.backend.gpds.main.Enums.Role;
+import jakarta.validation.constraints.*;
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserResponseDTO {
+@Builder
+public class UserCreateDTO {
 
-    private Long id;
+    @NotBlank
     private String login;
+
+    @NotBlank
+    private String password;
+
+    @NotBlank
     private String nom;
+
+    @NotBlank
     private String prenom;
+
+    @Email
     private String email;
+
+    @NotNull
     private Role role;
-    private boolean actif;
 
+    // obligatoire si role = GESTIONNAIRE
     private Long entrepotId;
-
 }

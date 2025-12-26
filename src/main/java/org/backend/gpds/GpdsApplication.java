@@ -5,11 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@SpringBootApplication(
-        exclude = {
-                org.springframework.ai.model.deepseek.autoconfigure.DeepSeekChatAutoConfiguration.class
-        }
-)
+@SpringBootApplication
 @EnableJpaRepositories(basePackages = "org.backend.gpds.main.repository.jpa")
 @EnableMongoRepositories(basePackages = "org.backend.gpds.main.repository.mongo")
 public class GpdsApplication {

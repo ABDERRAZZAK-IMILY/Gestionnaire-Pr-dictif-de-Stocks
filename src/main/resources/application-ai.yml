@@ -3,4 +3,9 @@ spring:
     activate:
       on-profile: ai
 
-spring.ai.deepseek.api-key: ${DEEPSEEK_API_KEY}
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: gemma2:4b

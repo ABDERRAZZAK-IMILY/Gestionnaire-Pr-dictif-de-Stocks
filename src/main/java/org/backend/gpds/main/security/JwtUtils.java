@@ -70,9 +70,12 @@ public class JwtUtils {
     }
 
 
-    public String generateTokenFromUsername(String username) {
+    public String generateTokenFromUsername(String email, List<String> roles) {
+        log.info("Generating refresh-access token for user: {} with roles: {}", email, roles);
+
         return JWT.create()
-                .withSubject(username)
+                .withSubject(email)
+                .withClaim("roles", roles)
                 .withIssuedAt(Instant.now())
                 .withExpiresAt(Instant.now().plusMillis(jwtExpirationMs))
                 .sign(Algorithm.HMAC256(secretKey));

@@ -2,8 +2,8 @@ package org.backend.gpds.main.repository.mongo;
 
 import org.backend.gpds.main.model.HistoriqueVente;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface HistoriqueVenteRepository extends MongoRepository<HistoriqueVente,String> {
+public interface HistoriqueVenteRepository extends MongoRepository<HistoriqueVente, String> {
+    List<HistoriqueVente> findByEntrepotId(Long entrepotId);
 }

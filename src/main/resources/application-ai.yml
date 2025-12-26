@@ -8,4 +8,4 @@ spring:
       base-url: http://localhost:11434
       chat:
         options:
-          model: gemma2:4b
+          model: gemma3:4b

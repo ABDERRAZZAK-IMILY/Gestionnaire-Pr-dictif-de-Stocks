@@ -38,7 +38,7 @@ public class AiServiceImpl implements AiService {
     public Prevision generatePredictions(Long productId, Long entrepotId) {
 
         List<HistoriqueVente> history = historiqueVenteRepository
-                .findByProductIdAndEntrepotId(productId, entrepotId);
+                .findByProduitIdAndEntrepotId(productId, entrepotId);
 
 
         Integer currentStock = stockRepository.findQuantityByProductAndEntrepot(productId, entrepotId);

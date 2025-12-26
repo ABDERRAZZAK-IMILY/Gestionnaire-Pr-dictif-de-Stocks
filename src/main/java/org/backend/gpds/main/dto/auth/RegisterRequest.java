@@ -30,6 +30,5 @@ public class RegisterRequest {
     private Role role;
 
 
-    @NotBlank(message = "Job title is required")
-    private String jobTitle; // ADMIN or USER
+    private String jobTitle;
 }

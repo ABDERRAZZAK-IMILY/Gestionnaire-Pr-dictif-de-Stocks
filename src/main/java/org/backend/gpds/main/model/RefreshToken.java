@@ -3,16 +3,16 @@ package org.backend.gpds.main.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.Instant;
-
 @Entity(name = "refresh_tokens")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class RefreshToken {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(nullable = false, unique = true)

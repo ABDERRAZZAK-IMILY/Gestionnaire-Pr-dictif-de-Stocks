@@ -6,6 +6,7 @@ import org.backend.gpds.main.model.Prevision;
 import org.backend.gpds.main.repository.jpa.StockRepository;
 import org.backend.gpds.main.repository.mongo.HistoriqueVenteRepository;
 import org.backend.gpds.main.repository.mongo.PrevisionRepository;
+import org.backend.gpds.main.service.AiService;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class AiServiceImpl {
+public class AiServiceImpl implements AiService {
 
     private final ChatClient chatClient;
     private final HistoriqueVenteRepository historiqueVenteRepository;

@@ -24,7 +24,7 @@ public class AiController {
     public ResponseEntity<Prevision>triggerPrediction(
             @PathVariable Long produitId,
             @PathVariable Long entrepotId
-    ){
+            ){
         Prevision results = aiService.generatePredictions(produitId , entrepotId);
         return ResponseEntity.ok(results);
     }

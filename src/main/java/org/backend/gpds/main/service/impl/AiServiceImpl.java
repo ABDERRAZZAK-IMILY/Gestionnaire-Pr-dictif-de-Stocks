@@ -48,15 +48,15 @@ public class AiServiceImpl {
 
                              String prompt = String.format("""
                    Act as an inventory expert.
-            
+
                   DATA:
                       - Stock: %d
                           - Daily Sales: %.1f
                       - Days until empty: %d
-            
+
                         HISTORY (Last 10 sales):
                          %s
-             
+
                              TASK:
                          Write a 1-sentence recommendation for the manager.
                          If days until empty is < 5, start with "URGENT ORDER NEEDED".

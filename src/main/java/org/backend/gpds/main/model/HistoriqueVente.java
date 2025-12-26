@@ -1,8 +1,10 @@
 package org.backend.gpds.main.model;
 
 
-import java.time.LocalDate;
+import lombok.Data;
 
+import java.time.LocalDate;
+@Data
 public class HistoriqueVente {
 
     private String id;

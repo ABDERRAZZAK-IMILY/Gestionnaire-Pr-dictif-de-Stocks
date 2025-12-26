@@ -7,5 +7,5 @@
 
     public interface HistoriqueVenteRepository extends MongoRepository<HistoriqueVente, String> {
         List<HistoriqueVente> findByEntrepotId(Long entrepotId);
-       List<HistoriqueVente> findByProductIdAndEntrepotId(Long ProductId, Long EntrepotId);
+        List<HistoriqueVente> findByProduitIdAndEntrepotId(Long produitId, Long entrepotId);
     }

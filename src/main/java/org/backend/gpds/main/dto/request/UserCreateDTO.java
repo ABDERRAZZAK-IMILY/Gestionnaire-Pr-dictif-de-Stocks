@@ -13,9 +13,9 @@ import jakarta.validation.constraints.*;
 @Builder
 public class UserCreateDTO {
 
+
     @NotBlank
     private String login;
-
     @NotBlank
     private String password;
 

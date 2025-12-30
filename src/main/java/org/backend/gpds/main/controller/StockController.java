@@ -7,6 +7,8 @@ import org.backend.gpds.main.mapper.StockMapper;
 import org.backend.gpds.main.service.StockService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,26 @@ import java.util.List;
 public class StockController {
 
     private final StockService stockService;
+
+
+
+    // Initialiser le stock d'un produit dans un entrepôt
+
+    @PostMapping("/initialize")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<StockDTO>initializeStock(@RequestBody @Valid StockDTO dto){
+
+        StockDTO createdStock = stockService.initializeStock(dto);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdStock);
+    }
+
+
+
+
+
+
+
 
     // ADMIN : voir tous les stocks
     @GetMapping("/admin")

@@ -30,8 +30,10 @@ public class AdminseederRunner  implements CommandLineRunner {
     private void seedUsers() {
         if (!userRepository.existsByEmail("admin@gpds.com")) {
             User admin = new User();
+            admin.setLogin("some");
             admin.setNom("Admin");
             admin.setPrenom("admin");
+
             admin.setEmail("admin@gpds.com");
             admin.setPassword(passwordEncoder.encode("admin123"));
             admin.setRole(Role.ADMIN);

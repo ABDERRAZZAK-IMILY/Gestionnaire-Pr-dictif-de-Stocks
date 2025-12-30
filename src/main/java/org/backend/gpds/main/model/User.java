@@ -20,11 +20,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String login;
-
     @Column(nullable = false)
     private String password;
+    private String login;
 
     @Column(nullable = false)
     private String nom;
@@ -36,7 +34,7 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role; // ADMIN, GESTIONNAIRE
+    private Role role;
 
     private boolean actif;
 

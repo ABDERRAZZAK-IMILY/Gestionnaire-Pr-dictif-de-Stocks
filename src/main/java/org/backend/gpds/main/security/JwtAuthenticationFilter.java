@@ -35,11 +35,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-        if (path.startsWith("/iot/")) {
-            filterChain.doFilter(request, response);
-            return;
-        }
-
 
         String jwt = parseJwt(request);
 

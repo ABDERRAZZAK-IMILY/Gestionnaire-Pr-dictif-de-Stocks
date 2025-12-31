@@ -34,13 +34,6 @@ public class StockController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStock);
     }
 
-
-
-
-
-
-
-
     // ADMIN : voir tous les stocks
     @GetMapping("/admin")
     @PreAuthorize("hasRole('ADMIN')")
@@ -66,7 +59,7 @@ public class StockController {
     @PreAuthorize("hasRole('GESTIONNAIRE')")
     public StockDTO updateStock(
             @PathVariable Long stockId,
-            @RequestParam Long entrepotUserId, // issu du JWT normalement
+            @RequestParam Long entrepotUserId,
             @RequestBody @Valid StockUpdateDTO dto) {
 
         return StockMapper.toDTO(

@@ -13,5 +13,7 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
 
     List<Stock> findByEntrepotId(Long entrepotId);
 
+    Optional<Stock> findByProduitIdAndEntrepotId(Long produitId,Long entrepotId);
+
     @Query("SELECT s.quantiteDisponible FROM Stock s WHERE s.produit.id = :produitId AND s.entrepot.id = :entrepotId")
     Integer findQuantityByProductAndEntrepot(@Param("produitId") Long produitId, @Param("entrepotId") Long entrepotId);}

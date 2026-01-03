@@ -43,11 +43,12 @@ services:
       mongo:
         condition: service_healthy
     environment:
-      SPRING_PROFILES_ACTIVE: postgres,mongo
+      SPRING_PROFILES_ACTIVE: postgres,mongo,ai  # Add 'ai' profile if needed
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/gpds
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: "202580"
       SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/gpds
+      OLLAMA_BASE_URL: http://host.docker.internal:11434  # Add this line
     ports:
       - "8081:8080"
     networks:
